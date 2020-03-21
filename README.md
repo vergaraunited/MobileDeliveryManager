@@ -1,6 +1,29 @@
 # MobileDeliveryManager
 United Window Mobile Delivery Manager API - Server API serving all Clients the Delivery SQL Server data.
+### MobileDeliveryMangerAPI
+#### WebSocket API IPad Delivery, Winform Manifest Generator, A/R Notifications.
 
+## NuGet Package References
+#### UMDNuGet - Azure Artifact Repository
+##### nuget.config file
+```xml
+<configuration>
+  <packageSources>
+    <clear />
+    <add key="UMDNuget" value="https://pkgs.dev.azure.com/unitedwindowmfg/1e4fcdac-b7c9-4478-823a-109475434848/_packaging/UMDNuget/nuget/v3/index.json" />
+  </packageSources>
+</configuration>
+```
+
+Package Name            | Version   | Description
+--------------------    | -------   | -----------
+UMDGeneral              | 1.1.0     | Mobile Delivery General Code
+MobileDeliveryServer    | 1.1.0     | Mobile Delivery Server base code for all servers
+MobilDeliveryClient     | 1.1.0     | Mobile Delivery Client base code for all clients
+MobileDeliveryLogger    | 1.0.0     | Mobile Delivery Logger base code for all components
+MobileDeliverySettings  | 1.0.0     | Mobile Delivery Settings base code for all components
+
+    
 ## Configuration
 #### Configuration is built into the docker image based on the settings in the app.config
 
