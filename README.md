@@ -42,6 +42,7 @@ MobileDeliverySettings  | 1.0.0     | Mobile Delivery Settings base code for all
 </appSettings>`
 ```
 
+
 ## NuGet
 
 #### Initialize the project
@@ -52,6 +53,8 @@ MobileDeliverySettings  | 1.0.0     | Mobile Delivery Settings base code for all
 `nnuget pack`
 #### Push into the Artifact (Azure/DevOps)
 `nuget.exe push -Source "UMDNuget" -ApiKey az UMDGeneral.1.1.0.nupkg`
+
+
 
 ## Docker
 
