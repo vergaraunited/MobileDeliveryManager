@@ -47,24 +47,23 @@ MobileDeliverySettings  | 1.0.0     | Mobile Delivery Settings base code for all
 
 #### Initialize the project
 `nuget restore`
+
 #### Don't need to run spec, only once to generate the nuspec file which is already checked into git
 `nuget spec`
+
 #### Creates the nupkg - don't checkin nupkg file, (.ignore git)
 `nuget pack`
 `nuget pack -IncludeReferencedProjects -Build -Symbols -Properties Configuration=Release`
-#### Push into the Artifact (Azure/DevOps)
+
+#### Push Artifact to Repository (Azure/DevOps)
+`find -name *.nupkg | xargs -i nuget push {} -Source "UMDNuget" -ApiKey az`
 `nuget.exe push -Source "UMDNuget" -ApiKey az UMDGeneral.1.1.0.nupkg`
-
-
 
 
 ## Docker
 
 #### Build
 `docker build -t mpbiledeliverymanager .`
-
-### Push Artifact to Repository
-`find -name *.nupkg | xargs -i nuget push {} -Source "UMDNuget" -ApiKey az`
 
 #### Run
 `docker run -d -p 81:81 --name mobiledeliverymanager --mount source=logs,destination=/app/logs  mobiledeliverymanager`
