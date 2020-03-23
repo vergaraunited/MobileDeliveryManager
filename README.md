@@ -57,7 +57,6 @@ MobileDeliverySettings  | 1.0.0     | Mobile Delivery Settings base code for all
 
 #### Push Artifact to Repository (Azure/DevOps)
 `find -name *.nupkg | xargs -i nuget push {} -Source "UMDNuget" -ApiKey az`
-`nuget.exe push -Source "UMDNuget" -ApiKey az UMDGeneral.1.1.0.nupkg`
 
 
 ## Docker
