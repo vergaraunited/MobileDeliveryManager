@@ -50,25 +50,30 @@ MobileDeliverySettings  | 1.0.0     | Mobile Delivery Settings base code for all
 #### Don't need to run spec, only once to generate the nuspec file which is already checked into git
 `nuget spec`
 #### Creates the nupkg - don't checkin nupkg file, (.ignore git)
-`nnuget pack`
+`nuget pack`
+`nuget pack -IncludeReferencedProjects -Build -Symbols -Properties Configuration=Release`
 #### Push into the Artifact (Azure/DevOps)
 `nuget.exe push -Source "UMDNuget" -ApiKey az UMDGeneral.1.1.0.nupkg`
+
 
 
 
 ## Docker
 
 #### Build
-docker build -t mpbiledeliverymanager .
+`docker build -t mpbiledeliverymanager .`
+
+### Push Artifact to Repository
+`find -name *.nupkg | xargs -i nuget push {} -Source "UMDNuget" -ApiKey az`
 
 #### Run
-docker run -d -p 81:81 --name mobiledeliverymanager --mount source=logs,destination=/app/logs  mobiledeliverymanager
+`docker run -d -p 81:81 --name mobiledeliverymanager --mount source=logs,destination=/app/logs  mobiledeliverymanager`
 
 #### Interactive shell into mobiledeliverymanager container
-winpty docker exec -it 03f8ba004e11 cmd
+`winpty docker exec -it 03f8ba004e11 cmd`
 
 #### MSSQL
-** docker exec -it <container_id|container_name> /opt/mssql-tools/bin/sqlcmd -S localhost -U sa -P <your_password>
+** `docker exec -it <container_id|container_name> /opt/mssql-tools/bin/sqlcmd -S localhost -U sa -P <your_password>`
 
 #### Log Volume for persisting and exposing the logs outside of the container and on localhost's filesystem
 ##### In order access log files and not issue docker commands to enter the interactive shell within the running container, volumes (and mounts) offer the ability to expose and persist across restarts and rebuilds on the localhost's file system.
