@@ -76,9 +76,11 @@ MobileDeliverySettings  | 1.0.0     | Mobile Delivery Settings base code for all
 #### Log Volume for persisting and exposing the logs outside of the container and on localhost's filesystem
 ##### In order access log files and not issue docker commands to enter the interactive shell within the running container, volumes (and mounts) offer the ability to expose and persist across restarts and rebuilds on the localhost's file system.
 `docker service create 
-    --mount 'type=volume,src=<VOLUME-NAME>,dst=<CONTAINER-PATH>,volume-driver=local,volume-opt=type=nfs,volume-opt=device=<nfs-server>:<nfs-path>,"volume-opt=o=addr=<nfs-address>,vers=4,soft,timeo=180,bg,tcp,rw"' 
+    --mount 'type=volume,src=log,dst=/app/log,ro=0,volume-driver=local,volume-opt=type=nfs,volume-opt=device=<nfs-server>:<nfs-path>,"volume-opt=o=addr=<nfs-address>,vers=4,soft,timeo=180,bg,tcp,rw"' 
     --name myservice 
     <IMAGE>`
+
+
 `docker volume create logs`
 `docker volume ls`
 `docker volume inspect logs`
