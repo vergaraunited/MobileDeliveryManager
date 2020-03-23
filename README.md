@@ -18,7 +18,7 @@ United Window Mobile Delivery Manager API - Server API serving all Clients the D
 Package Name            | Version   | Description
 --------------------    | -------   | -----------
 UMDGeneral              | 1.1.0     | Mobile Delivery General Code
-MobileDeliveryServer    | 1.1.0     | Mobile Delivery Server base code for all servers
+MobileDeliveryServer    | 1.3.0     | Mobile Delivery Server base code for all servers
 MobilDeliveryClient     | 1.1.0     | Mobile Delivery Client base code for all clients
 MobileDeliveryLogger    | 1.0.0     | Mobile Delivery Logger base code for all components
 MobileDeliverySettings  | 1.0.0     | Mobile Delivery Settings base code for all components
