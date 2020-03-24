@@ -53,7 +53,7 @@ MobileDeliverySettings  | 1.0.0     | Mobile Delivery Settings base code for all
 
 #### Creates the nupkg - don't checkin nupkg file, (.ignore git)
 `nuget pack`
-`nuget pack -IncludeReferencedProjects -Build -Symbols -Properties Configuration=Release`
+`nuget pack -IncludeReferencedProjects -Build -Properties Configuration=Release`
 
 #### Push Artifact to Repository (Azure/DevOps)
 `find -name *.nupkg | xargs -i nuget push {} -Source "UMDNuget" -ApiKey az`
@@ -65,7 +65,7 @@ MobileDeliverySettings  | 1.0.0     | Mobile Delivery Settings base code for all
 `docker build -t mpbiledeliverymanager .`
 
 #### Run
-`docker run -d -p 81:81 --name mobiledeliverymanager --mount source=logs,destination=/app/logs  mobiledeliverymanager`
+`docker run -d -p 81:81 -p 1433:1433 --name mobiledeliverymanage:wqr --mount source=logs,destination=/app/logs  mobiledeliverymanager`
 
 #### Interactive shell into mobiledeliverymanager container
 `winpty docker exec -it 03f8ba004e11 cmd`
