@@ -65,7 +65,8 @@ MobileDeliverySettings  | 1.0.0     | Mobile Delivery Settings base code for all
 `docker build -t mobiledeliverymanager .`
 
 #### Run
-`docker run -d -p 81:81 -p 1433:1433 --name mobiledeliverymanager --mount source=logs,destination=/app/logs  mobiledeliverymanager`
+`docker run -d -p 81:81 -p 8181:8181 -p 1433:1433 --name mobiledeliverymanager --mount source=logs,destination=c:/app/logs  mobiledeliverymanager`
+`docker run -d -p 81:81 -p 8181:8181 -p 1433:1433 --name mobiledeliverymgrcore --mount source=logs,destination=c:/app/logs mobiledeliverymgrcore`
 
 #### Interactive shell into mobiledeliverymanager container
 `winpty docker exec -it 03f8ba004e11 cmd`
